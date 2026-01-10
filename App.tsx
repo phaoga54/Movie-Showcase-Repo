@@ -1,11 +1,11 @@
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { StatusBar } from 'expo-status-bar';
-
-import { store, persistor } from './store';
-import RootNavigator from './navigation/RootNavigator';
+import RootNavigator from './src/navigation/RootNavigator';
+import { persistor, store } from './src/store';
+ 
 
 export default function App() {
   return (
