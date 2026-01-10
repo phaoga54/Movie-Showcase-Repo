@@ -1,16 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export type CategoryType = 'now_playing' | 'upcoming' | 'popular';
-export type SortByType = 'alphabetical' | 'rating' | 'release_date';
+export type CategoryType = 'nowPlaying' | 'upcoming' | 'popular';
+export type SortByType = 'alphabetical' | 'rating' | 'releaseDate';
 
 interface PreferencesState {
   selectedCategory: CategoryType;
-  sortBy: SortByType;
+  sortBy?: SortByType;
 }
 
 const initialState: PreferencesState = {
-  selectedCategory: 'now_playing',
-  sortBy: 'alphabetical',
+  selectedCategory: 'nowPlaying',
 };
 
 const preferencesSlice = createSlice({
