@@ -1,13 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-export interface Movie {
-  id: number;
-  title: string;
-  poster_path: string | null;
-  release_date: string;
-  overview: string;
-  vote_average: number;
-}
+import { Movie } from '@/src/services/tmdb.service';
 
 interface WatchlistState {
   movies: Movie[];
