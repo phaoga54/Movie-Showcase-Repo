@@ -7,5 +7,6 @@ export interface MovieCardProps {
   releaseDate: string;
   overview: string;
   onPress?: (id: number) => void;
+  onDelete?: (id: number) => void;
   containerStyle?: StyleProp<ViewStyle>;
 }

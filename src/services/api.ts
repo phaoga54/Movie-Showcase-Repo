@@ -22,7 +22,11 @@ apiClient.interceptors.request.use(
 
     // Log request (development only)
     if (__DEV__) {
-      console.log('API Request:', JSON.stringify(config));
+      console.log('API Request:', {
+        method: config.method?.toUpperCase(),
+        url: config.url,
+        params: config.params,
+      });
     }
 
     return config;
@@ -41,6 +45,11 @@ apiClient.interceptors.response.use(
   (response: AxiosResponse) => {
     // Log response (development only)
     if (__DEV__) {
+      console.log('API Response:', {
+        status: response.status,
+        url: response.config.url,
+        data: response.data,
+      });
     }
 
     return response;

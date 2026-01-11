@@ -11,6 +11,7 @@ interface MovieListComponentProps {
   error: string | null;
   onMoviePress: (id: number) => void;
   onEndReached: () => void;
+  onDelete?: (id: number) => void;
 }
 
 export const MovieListComponent: React.FC<MovieListComponentProps> = ({
@@ -21,6 +22,7 @@ export const MovieListComponent: React.FC<MovieListComponentProps> = ({
   error,
   onMoviePress,
   onEndReached,
+  onDelete,
 }) => {
   const renderItem: ListRenderItem<Movie> = ({ item }) => (
     <MovieCard
@@ -30,6 +32,7 @@ export const MovieListComponent: React.FC<MovieListComponentProps> = ({
       releaseDate={item.release_date}
       overview={item.overview}
       onPress={onMoviePress}
+      onDelete={onDelete}
     />
   );
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import SearchInput from './index';
 
 /**
@@ -9,7 +9,6 @@ export const SearchInputExample = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
-    console.log('Searching for:', searchQuery);
     // Add your search logic here
     // For example:
     // - Call an API with the search query

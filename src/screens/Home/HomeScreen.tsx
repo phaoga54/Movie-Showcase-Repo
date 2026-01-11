@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     paddingHorizontal: 16,
-    paddingTop: 16,
+
   },
   logoContainer: {
     marginBottom: 24,

@@ -3,13 +3,12 @@
  */
 
 import React from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import MovieCard from './index';
 
 // Example 1: Single Movie Card
 export const SingleMovieCardExample = () => {
   const handlePress = (id: number) => {
-    console.log('Movie pressed:', id);
   };
 
   return (
@@ -48,7 +47,6 @@ export const MovieListExample = () => {
   ];
 
   const handlePress = (id: number) => {
-    console.log('Navigate to movie:', id);
   };
 
   return (

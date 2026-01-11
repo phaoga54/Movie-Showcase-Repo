@@ -1,4 +1,5 @@
 import { getImageUrl } from '@/src/config/api.config';
+import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { MovieCardProps } from './types';
@@ -11,6 +12,7 @@ export const MovieCardUI: React.FC<MovieCardProps> = ({
   releaseDate,
   overview,
   onPress,
+  onDelete,
   containerStyle,
 }) => {
   const { handlePress, formatDate } = useMovieCard({ id, onPress });
@@ -46,6 +48,19 @@ export const MovieCardUI: React.FC<MovieCardProps> = ({
           {overview}
         </Text>
       </View>
+
+      {onDelete && (
+        <TouchableOpacity
+          style={styles.deleteButton}
+          onPress={(e) => {
+            e.stopPropagation();
+            onDelete(id);
+          }}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+        >
+          <Ionicons name="close" size={24} color="#666" />
+        </TouchableOpacity>
+      )}
     </TouchableOpacity>
   );
 };
@@ -109,5 +124,13 @@ const styles = StyleSheet.create({
     color: '#000000',
     lineHeight: 20,
     marginTop:14
+  },
+  deleteButton: {
+    position: 'absolute',
+    top: 8,
+    right: 8,
+    padding: 4,
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    borderRadius: 12,
   },
 });

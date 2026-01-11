@@ -78,7 +78,6 @@ export interface Credits {
 
 export interface AccountDetails {
   id: number;
-  name: string;
   username: string;
   include_adult: boolean;
   iso_3166_1: string;
@@ -155,8 +154,8 @@ export const tmdbService = {
   },
 
   // Get account details (requires session/authentication)
-  getAccountDetails: async (): Promise<AccountDetails> => {
-    const response = await apiClient.get<AccountDetails>('/account');
+  getAccountDetails: async (accountId: number = 22641732): Promise<AccountDetails> => {
+    const response = await apiClient.get<AccountDetails>(`/account/${accountId}`);
     return response.data;
   },
 };
